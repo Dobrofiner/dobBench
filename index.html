@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobrofiner's benchmarks</title>
+    <link rel="stylesheet" href="dobCss.css">
+</head>
+<body>
+    <!---Structure block
+<div class="dcol-4 dtext-center dcolor-dobrofiner dcolor-white dbg-orange dborder-2 dround-5 dbreak dpl-1">
+    <h3 class="dcolor-dobrofiner">Имя Бенчмарка</h1>
+    </img src="..." width="100" height="100">
+    <p>Описание</p>
+    <a class="dbtn" href="...">Перейти туда</a>
+</div>
+    ---->
+    <div class="dcontainer">
+        <div class="dcontainer">
+            <div class="doffset-2 dcol-8 dborder-2 dcolor-white dbg-black dborder-black dm-b1 dtext-center">Добро Пожаловать на этот сайт! Здесь можно найти все или часть бенчмарков, которые были созданы мною...</div>
+        </div>
+        <div class="dbox dp-1 dcol-4 dtext-center dcolor-dobrofiner dcolor-white dbg-orange dborder-2 dround-5 dbreak dpl-1">
+            <h3 class="dcolor-dobrofiner">RERDB</h1>
+            </img src="..." width="100" height="100">
+            <p>DobBench это комплексный бенчмарк, который одновременно проверяет смесь 
+                вычислений, случайного доступа к памяти, последовательного доступа,
+                случайных ветвлений.Он детерминирован по сиду и использует 
+                RDG(Random Dobrofiner's Generator).&nbsp;Еденица скорости 
+                - RERDBOPS(REal Random Dobrofiner's Benchmark Operations 
+                per Second)</p>
+            <a class="dbtn dp-1 dbox" href="./benches.html?bench=rerdb">Запустить бенчмарк!</a>
+        </div>
+              <div class="dbox  dp-1 dm-l1 dcol-4 dtext-center dcolor-dobrofiner dcolor-white dbg-orange dborder-2 dround-5 dbreak dpl-1">
+            <h3 class="dcolor-dobrofiner">RWOPS</h1>
+            </img src="..." width="100" height="100">
+            <p>RWOPS это бенчмарк,который на двух случайных векторов 
+                любого размера(пока хватает памяти компуктеру) и 
+                развещивает их
+                поэлементно(v1[0]/v2[0]-v1[1]/v2[1]...-...v1[d]/v2[d])
+                и еще вычисляет их развещанную разность. 
+                Эта еденица очень важна
+                для <a href="https://github.com/Dobrofiner/razweighted_neuron">
+                развещанного нейрона</a>
+                и определяет скорость так его обучения,
+                так и его инференса.
+                Может исчислятся в порядке числа 100 млн...
+                иногда в 10ках миллионах.</p>
+            <a class="dbtn  dp-1 dbox" href="./benches.html?bench=rwops">Запустить бенчмарк!</a>
+        </div>
+              <div class="dbox  dp-1 dm-l1 dcol-4 dtext-center dcolor-dobrofiner dcolor-white dbg-orange dborder-2 dround-5 dbreak dpl-1">
+            <h3 class="dcolor-dobrofiner">DLOPS</h1>
+            </img src="..." width="100" height="100">
+            <p>DLOPS это бенчмарк, который меряет скорость вычисления итеративной
+             системы x=((x/iters)+d*0.1)/x где iters это сколько итераций максимум, 
+             и d - текущий номер итерации. Единица - DLOPS(Dobrofiner's Linear Operations Per Second)</p>
+            <a class="dbtn dp-1 dbox" href="./benches.html?bench=dlops">Запустить бенчмарк!</a>
+        </div>
+    </div>
+</body>
+</html>

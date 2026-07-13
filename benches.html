@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бенчмарки - RERDBS</title>
+    <link rel="stylesheet" href="dobCss.css">
+    <style>
+        code {
+    background: #f0f0f0;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    color: #e72042;
+    font-family: monospace;
+}
+    </style>
+</head>
+<body class="dbg-white">
+<div class="dcolor-black dcontainer">
+    <div id="info">
+    <p class="dcol-12 dtext-center dround-3 dbg-dobrofiner dborder dborder-dobrofiner" id="messageStart">
+    Добро пожаловать на эту страницу! Здесь, вы можете настроить и запустить бенчмарк RERDBS<br>
+    </p>
+    <p class="dcol-12 dtext-center dround-3 dbg-white dborder-dobrofiner" id="about">
+RERDBS(REal Random Dobrofiner's Benchmark / Second) это бенчмарк, в котором каждый цикл процессор генерирует  случайное число и с шансом 50% выполняет либо случайный либо последовательный доступ к памяти,тем самым выполняя ветвление. Потом после доступа к памяти он выполняет расчет выражения <code>((x/y)+x*0.1-y)</code>, в котором ровно по один раз встречаются все действия и если вклчено, результат еще пишет в массив результатов,и так пока время не кончится(точность - 1 миллисекунда). Во время работы, страница может зависнуть.
+    </p>
+    </div>
+    <div id="interactive">
+            <div id="settings">
+ Поддерживаемые параметры:<br>
+        Время работы(мс):<input id="time" type="text" value="1000"><br>
+        Размер датасета(хранится как float64,осторожно: не сделайте слишком огромным,иначе в памятьможет и не влезть):<input id="dataSize" type="text" value="1_000_000"><br>
+        Сид(любое число от 0 до 4.2 млрд с чем-то, то есть 32ух битное число):<input id="seed" type="text" value="1"><br>
+         <input type="checkbox" id="write">Писать ли результаты в массив?
+           
+        </div>
+        <div id="buttons">
+            <button id="start" class="dbtn" onclick="startBench('rerdbs')">Запустить бенчмарк!</button>
+        </div><br>
+    <div id="result" class="dborder dborder dborder-black dborder-solid" style="margin-top: 1px;">
+
+    </div>
+    </div>
+    
+</div>
+   <script src="./bench.js"></script> 
+</body>
+</html>
