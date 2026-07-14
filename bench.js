@@ -1,3 +1,5 @@
+let rdg=state=>((state+0xD0B)*0xD0BD^(0xAEDEAABD-1))>>>0
+
 let lib={
     rerdbs:{
        messageStart:"Добро пожаловать на эту страницу! Здесь, вы можете настроить и запустить бенчмарк RERDBS<br>",
@@ -144,7 +146,6 @@ x=((x/iters)+d*0.1)/x
 let end=performance.now()
     return {x,time:end-start,speed:1000/((end-start)/iters)}
 }
-let rdg=state=>((state+0xD0B)*0xD0BD^(0xAEDEAABD-1))>>>0
 function dobBench2(time,bufferLength=1_000_000,seed){
     let buf=new Float64Array(bufferLength),stateGen=seed,stateWork=seed+1
     for(let d=0;d<buf.length;d++){
