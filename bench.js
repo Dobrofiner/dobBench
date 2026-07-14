@@ -6,7 +6,7 @@ let lib={
         Время работы(мс):<input id="time" type="text" value="1000"><br>
         Размер датасета(хранится как float64,осторожно: не сделайте слишком огромным,иначе в памятьможет и не влезть):<input id="dataSize" type="text" value="1_000_000"><br>
         Сид(любое число от 0 до 4.2 млрд с чем-то, то есть 32ух битное число):<input id="seed" type="text" value="1"><br>
-        <input type="checkbox" id="write">Писать ли результаты в массив?
+        <input type="checkbox" id="write">Писать ли результаты в массив?<br>
         `,
        buttons:`<button id="start" class="dbtn" onclick="startBench('rerdbs')">Запустить бенчмарк!</button>`
     },
@@ -59,7 +59,7 @@ let benchData={
                     Скорость:${data.speed} RERDBS<br>
                     Z самый последний:${data.z}`
             }
-            html+=`<button class="dbtn" onclick="downloadRes(${results.length})">Скачать результат</button>`
+            html+=`<br><button class="dbtn" onclick="downloadRes(${results.length})">Скачать результат</button>`
             results[results.length]={data,type:"rerdbs"}
             return html
         }
@@ -90,7 +90,7 @@ let benchData={
         renderRes:(data)=>{
             html=`Время работы:${data.time} мс<br>
             Скорость:${data.speed} RWOPS<br>
-            Накопленно:${data.total}<br>
+            Накопленно:${data.total}
             <br><button class="dbtn" onclick="downloadRes(${results.length})">Скачать результат</button>`
             results[results.length]={data,type:"rwops"}
             return html  
